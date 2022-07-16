@@ -1,4 +1,4 @@
-## CycleGan：Cycle-Consistent Adversarial Networks模型在pytorch当中的实现
+## CycleGan：Cycle-Consistent Adversarial Networks模型在Keras当中的实现
 ---
 
 ### 目录
@@ -9,14 +9,15 @@
 6. [参考资料 Reference](#Reference)
 
 ## 所需环境
-pytorch==1.2.0    
+tensorflow==1.13.2
+keras==2.1.5    
 
 ## 文件下载
 本仓库以horse2zebra（马与斑马）数据集为示例，训练了转换的例子，训练好的生成器与判别器模型如下：   
-[Generator_A2B_horse2zebra.pth](https://github.com/bubbliiiing/dcgan-pytorch/releases/download/v1.0/Generator_A2B_horse2zebra.pth)；   
-[Generator_B2A_horse2zebra.pth](https://github.com/bubbliiiing/dcgan-pytorch/releases/download/v1.0/Generator_B2A_horse2zebra.pth)；   
-[Discriminator_A_horse2zebra.pth](https://github.com/bubbliiiing/dcgan-pytorch/releases/download/v1.0/Discriminator_A_horse2zebra.pth)；   
-[Discriminator_B_horse2zebra.pth](https://github.com/bubbliiiing/dcgan-pytorch/releases/download/v1.0/Discriminator_B_horse2zebra.pth)；   
+[Generator_A2B_horse2zebra.h5](https://github.com/bubbliiiing/dcgan-keras/releases/download/v1.0/Generator_A2B_horse2zebra.h5)；   
+[Generator_B2A_horse2zebra.h5](https://github.com/bubbliiiing/dcgan-keras/releases/download/v1.0/Generator_B2A_horse2zebra.h5)；   
+[Discriminator_A_horse2zebra.h5](https://github.com/bubbliiiing/dcgan-keras/releases/download/v1.0/Discriminator_A_horse2zebra.h5)；   
+[Discriminator_B_horse2zebra.h5](https://github.com/bubbliiiing/dcgan-keras/releases/download/v1.0/Discriminator_B_horse2zebra.h5)；   
 可以通过网盘下载或者通过GITHUB下载。   
 
 权值的网盘地址如下：    
@@ -36,7 +37,7 @@ _defaults = {
     #-----------------------------------------------#
     #   model_path指向logs文件夹下的权值文件
     #-----------------------------------------------#
-    "model_path"        : 'model_data/Generator_Flower.pth',
+    "model_path"        : 'model_data/Generator_Flower.h5',
     #-----------------------------------------------#
     #   卷积通道数的设置
     #-----------------------------------------------#

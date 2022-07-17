@@ -178,8 +178,8 @@ if __name__ == "__main__":
         if epoch_step == 0:
             raise ValueError("数据集过小，无法进行训练，请扩充数据集。")
 
-        D_model_A.compile(loss='mse', optimizer=optimizer)
-        D_model_B.compile(loss='mse', optimizer=optimizer)
+        D_model_A.compile(loss='binary_crossentropy', optimizer=optimizer)
+        D_model_B.compile(loss='binary_crossentropy', optimizer=optimizer)
 
         img_A = Input(shape=[input_shape[0], input_shape[1], 3])
         img_B = Input(shape=[input_shape[0], input_shape[1], 3])

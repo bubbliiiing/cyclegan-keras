@@ -197,6 +197,7 @@ def discriminator(input_shape):
     # 8,8,1
     x = Conv2D(1, kernel_size=4, strides=1, padding='same')(x)
     x = GlobalAveragePooling2D()(x)
+    x = Activation('sigmoid')(x)
 
     model = Model(inputs, x)
     return model

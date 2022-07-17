@@ -74,10 +74,10 @@ def fit_one_epoch(
     #   每若干个世代保存一次
     #----------------------------#
     if (epoch + 1) % save_period == 0 or epoch + 1 == Epoch:
-        G_model_A2B_body.save_weights(os.path.join(save_dir, 'G_model_A2B_Epoch%d-GLoss%.4f-DALoss%.4f-DBLoss%.4f.pth'%(epoch + 1, G_total_loss, D_total_loss_A, D_total_loss_B)))
-        G_model_B2A_body.save_weights(os.path.join(save_dir, 'G_model_B2A_Epoch%d-GLoss%.4f-DALoss%.4f-DBLoss%.4f.pth'%(epoch + 1, G_total_loss, D_total_loss_A, D_total_loss_B)))
-        D_model_A_body.save_weights(os.path.join(save_dir, 'D_model_A_Epoch%d-GLoss%.4f-DALoss%.4f-DBLoss%.4f.pth'%(epoch + 1, G_total_loss, D_total_loss_A, D_total_loss_B)))
-        D_model_B_body.save_weights(os.path.join(save_dir, 'D_model_B_Epoch%d-GLoss%.4f-DALoss%.4f-DBLoss%.4f.pth'%(epoch + 1, G_total_loss, D_total_loss_A, D_total_loss_B)))
+        G_model_A2B_body.save_weights(os.path.join(save_dir, 'G_model_A2B_Epoch%d-GLoss%.4f-DALoss%.4f-DBLoss%.4f.h5'%(epoch + 1, G_total_loss, D_total_loss_A, D_total_loss_B)))
+        G_model_B2A_body.save_weights(os.path.join(save_dir, 'G_model_B2A_Epoch%d-GLoss%.4f-DALoss%.4f-DBLoss%.4f.h5'%(epoch + 1, G_total_loss, D_total_loss_A, D_total_loss_B)))
+        D_model_A_body.save_weights(os.path.join(save_dir, 'D_model_A_Epoch%d-GLoss%.4f-DALoss%.4f-DBLoss%.4f.h5'%(epoch + 1, G_total_loss, D_total_loss_A, D_total_loss_B)))
+        D_model_B_body.save_weights(os.path.join(save_dir, 'D_model_B_Epoch%d-GLoss%.4f-DALoss%.4f-DBLoss%.4f.h5'%(epoch + 1, G_total_loss, D_total_loss_A, D_total_loss_B)))
 
     if os.path.exists(os.path.join(save_dir, 'G_model_A2B_last_epoch_weights.h5')):
         os.remove(os.path.join(save_dir, 'G_model_A2B_last_epoch_weights.h5'))
@@ -87,7 +87,7 @@ def fit_one_epoch(
         os.remove(os.path.join(save_dir, 'D_model_A_last_epoch_weights.h5'))
     if os.path.exists(os.path.join(save_dir, 'D_model_B_last_epoch_weights.h5')):
         os.remove(os.path.join(save_dir, 'D_model_B_last_epoch_weights.h5'))
-    G_model_A2B_body.save_weights(os.path.join(save_dir, "G_model_A2B_last_epoch_weights.pth"))
-    G_model_B2A_body.save_weights(os.path.join(save_dir, "G_model_B2A_last_epoch_weights.pth"))
-    D_model_A_body.save_weights(os.path.join(save_dir, "D_model_A_last_epoch_weights.pth"))
-    D_model_B_body.save_weights(os.path.join(save_dir, "D_model_B_last_epoch_weights.pth"))
+    G_model_A2B_body.save_weights(os.path.join(save_dir, "G_model_A2B_last_epoch_weights.h5"))
+    G_model_B2A_body.save_weights(os.path.join(save_dir, "G_model_B2A_last_epoch_weights.h5"))
+    D_model_A_body.save_weights(os.path.join(save_dir, "D_model_A_last_epoch_weights.h5"))
+    D_model_B_body.save_weights(os.path.join(save_dir, "D_model_B_last_epoch_weights.h5"))

@@ -218,7 +218,7 @@ if __name__ == "__main__":
             Combine_model = Combine_model_body
 
         Combine_model.compile(
-            loss            = ['mse', 'mse', 'mae', 'mae', 'mae', 'mae'],
+            loss            = ['binary_crossentropy', 'binary_crossentropy', 'mse', 'mse', 'mse', 'mse'],
             loss_weights    = [0.5, 0.5, 5, 5, 2.5, 2.5],
             optimizer       = optimizer
         )

@@ -9,7 +9,7 @@
 6. [参考资料 Reference](#Reference)
 
 ## 所需环境
-tensorflow-gpu==1.13.2
+tensorflow-gpu==1.13.2   
 keras==2.1.5  
 
 ## 文件下载

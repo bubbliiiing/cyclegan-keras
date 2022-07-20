@@ -19,7 +19,7 @@ class CYCLEGAN(object):
         #-----------------------------------------------#
         #   model_path指向logs文件夹下的权值文件
         #-----------------------------------------------#
-        "model_path"        : 'model_data/Generator_Flower.h5',
+        "model_path"        : 'model_data/Generator_A2B_horse2zebra.h5',
         #-----------------------------------------------#
         #   输入图像大小的设置
         #-----------------------------------------------#
@@ -46,7 +46,7 @@ class CYCLEGAN(object):
     #   创建生成模型
     #---------------------------------------------------#
     def generate(self):
-        self.net = generator(self.channel, self.input_shape)
+        self.net = generator(self.input_shape)
         self.net.load_weights(self.model_path)
         print('{} model loaded.'.format(self.model_path))
 
@@ -72,7 +72,7 @@ class CYCLEGAN(object):
         #---------------------------------------------------------#
         #   添加上batch_size维度
         #---------------------------------------------------------#
-        image_data = np.expand_dims(np.transpose(preprocess_input(np.array(image_data, dtype='float32')), (2, 0, 1)), 0)
+        image_data = np.expand_dims(preprocess_input(np.array(image_data, dtype='float32')), 0)
         
         #---------------------------------------------------#
         #   图片传入网络进行预测
